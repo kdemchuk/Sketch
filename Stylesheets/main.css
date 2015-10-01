@@ -101,6 +101,10 @@ h2 {
 }
 
 
+*:before, *:after {
+    box-sizing: border-box;
+}
+
 /*
   ========================================
   container(s)
@@ -111,13 +115,18 @@ h2 {
     max-width: 100%;
 }
 
-.content-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border: 1px solid yellow;
 
+
+.main-header {
+    border-width: 0 0 1px;
+    border-image: linear-gradient (90deg, rgba (255,255,255,0), rgba (255,255,255,0.15) 50%, rgba (255,255,255,0) 100%) 5%;
 }
+
+.wrapper {
+    max-width:61.250rem;
+    margin: 0 auto;
+}
+
 @media screen and (min-width: 900px) {
     .content-container {
         
@@ -132,49 +141,109 @@ h2 {
 */
 
 .main-header {
-        background-color:	#0B2137;	
+        background-color: #0B2137;	
         height: 100px;
+        margin-bottom: 0;
 
 }
 
-.main-nav {
+
+
+.logo {
+    font-size: 20px;
     display: inline-block;
-    position: relative;
-    text-align: center;
-    margin-top: 30px;
-    
-    width: 100%;
-
-}
-.main-nav a {
-    color: rgba(255, 255, 255, 0.5);
+    float: left;
+    vertical-align: middle;
+    margin-top: 50px;
 }
 
-.main-nav a:hover {
-    color: #CED2D3;
+
+.nav {
+    display: inline-block;
+    margin-top: 50px;
+    margin-right: 10px;
+    float: right;    
+   
 }
 
-.group li {
+
+.nav li {
     display: inline-block;
     font-size: 0.7rem;
     font-weight: 200;
     margin-left: 30px;
     padding: 5px;
-    
+}
+
+
+.nav-toggle{
+    display: none;
+}
+
+
+
+/*
+  ========================================
+  Clearfix
+  ========================================
+*/
+.group:before,
+.group:after {
+    content:"";
+    display: table;
+}
+
+.group:after {
+    clear:both;
 }
 
 .group {
-    display: inline-block;
-    margin-top: 35px;
-    border: 
-    text-align: right;
+    clear: both;
+    *zoom:1;
 }
 
-.logo {
-    font-size: 20px;
-    display: inline;
-    border: 
-    padding: 5px;
+
+/*
+  ========================================
+  Links
+  ========================================
+*/
+
+.nav a {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.nav a:hover {
+    color: #CED2D3;
+}
+
+.highlight {
+    color: rgba (255,255,255,0.9);
+}
+
+.ir {
+    width: 1.75rem;
+    height: 2.0625rem;
+    background: url("../images/bohemian_logo.png") no-repeat left top;
+    background-size: contain;
+    vertical-align: text-top;
+    position: relative;
+    top: .1875rem;
+    
+}
+
+
+.name {
+    color: #fff;
+}
+
+.version-3 {
+    color:#f69d52;
+    font-size: 65%;
+    position: relative;
+    vertical-align: baseline;
+    top:-.40em;
+    left:-0.65ex;
 }
 
 .buy {
